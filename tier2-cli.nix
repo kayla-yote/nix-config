@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }: {
    imports = [
-      ./kaela-base.nix
+      ./tier1-base.nix
       ./build-machines.nix
       ./service-remotebuild.nix
       (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")

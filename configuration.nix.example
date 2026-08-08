@@ -4,9 +4,8 @@
    imports = [
       ./hardware-configuration.nix # (generated)
       #<nixos-hardware/framework/12-inch/13th-gen-intel>
-
-      nix-config/kaela-cli.nix
-      #nix-config/kaela-gui.nix
+      kilo/tier2-cli.nix
+      #kilo/tier3-gui.nix
    ];
    #nix.distributedBuilds = mkForce false;
    users.users.remotebuild.enable = false;

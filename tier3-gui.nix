@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
    imports = [
-      ./kaela-cli.nix
+      ./tier2-cli.nix
       (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
    ];
 
@@ -53,6 +53,7 @@
       kicad
       wsjtx
       cura-appimage
+      openscad
       vrcx
    ];
 

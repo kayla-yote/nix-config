@@ -76,6 +76,7 @@
    # services.openssh.enable = true;
    services.openssh = {
       enable = true;
+      authorizedKeysInHomedir = false;
       settings = {
          #LogLevel = "DEBUG3";
          PasswordAuthentication = false;

@@ -1,7 +1,19 @@
 { config, pkgs, lib, ... }: {
    networking.hostName = lib.mkDefault "rasa";
 
-   environment.variables.EDITOR = "vim";
+   programs.vim = {
+     enable = true;
+     defaultEditor = true;
+     package = (pkgs.vim-full.override{}).customize{
+       name = "vim";
+       vimrcConfig.customRC = ''
+         set tabstop=3
+         set shiftwidth=3
+         set expandtab
+       '';
+     };
+   };
+   #environment.variables.EDITOR = "vim";
    security.sudo.wheelNeedsPassword = false;
 
    #time.timeZone = "America/Los_Angeles";

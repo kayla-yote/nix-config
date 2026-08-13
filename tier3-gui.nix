@@ -48,7 +48,7 @@
       vrc-get
       alcom
       #plover.dev
-      latest.firefox-nightly-bin
+      firefox-devedition
       sdrpp
       kicad
       wsjtx
@@ -58,23 +58,10 @@
    ];
 
    # -
-   # Firefox Nightly
-
+   
    programs.firefox.enable = true;
+   programs.firefox.package = pkgs.firefox-devedition;
    programs.steam.enable = true;
-
-   # https://nixos.wiki/wiki/Firefox
-   nixpkgs.overlays =
-      let
-         # Change this to a rev sha to pin
-         moz-rev = "master";
-         #moz-url = builtins.fetchTarball { url = "https://github.com/mozilla/nixpkgs-mozilla/archive/${moz-rev}.tar.gz";};
-         moz-url = "/home/kilo/bin/nixpkgs-mozilla";
-         nightlyOverlay = (import "${moz-url}/firefox-overlay.nix");
-      in [
-         nightlyOverlay
-      ];
-   #programs.firefox.package = pkgs.latest.firefox-nightly-bin;
 
    # -
 
@@ -109,3 +96,4 @@
       #media-session.enable = true;
    };
 }
+
